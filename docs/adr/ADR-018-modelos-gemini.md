@@ -1,6 +1,6 @@
 # ADR-018 — Modelos Gemini: um único modelo estável da família Flash, configurável por variável de ambiente
 
-- **Status:** Proposto (o identificador exato do modelo é definido na implementação)
+- **Status:** Aceito (identificador definido: `gemini-3.8-flash`; validado em 2026-10-30)
 - **Data da decisão:** 2026-10-30
 - **Decisores:** Lucas Rocha (responsável pela entrega)
 - **Relacionados:**

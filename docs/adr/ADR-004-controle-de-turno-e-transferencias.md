@@ -1,6 +1,6 @@
 # ADR-004 — Controle de turno: especialistas sem transferência para o pai nem para os pares
 
-- **Status:** Proposto (sujeito à prova de conceito de confirmação)
+- **Status:** Aceito (implementado e validado em 2026-10-30: testes de integração, PoCs de confirmação e roteiro de aceitação com o Gemini real)
 - **Data da decisão:** 2026-10-30
 - **Decisores:** Lucas Rocha (responsável pela entrega)
 - **Relacionados:**

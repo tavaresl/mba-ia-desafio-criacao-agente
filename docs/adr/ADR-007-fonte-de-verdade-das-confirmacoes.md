@@ -1,6 +1,6 @@
 # ADR-007 — Pendências de confirmação e regra do `409` derivadas dos eventos persistidos da sessão
 
-- **Status:** Proposto
+- **Status:** Aceito (implementado e validado em 2026-10-30: testes de integração, PoCs de confirmação e roteiro de aceitação com o Gemini real)
 - **Data da decisão:** 2026-10-30
 - **Decisores:** Lucas Rocha (responsável pela entrega)
 - **Relacionados:**

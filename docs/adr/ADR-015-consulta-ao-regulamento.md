@@ -1,6 +1,6 @@
 # ADR-015 — Consulta ao regulamento por capítulo, com seleção por identificador fechado e execução isolada
 
-- **Status:** Proposto
+- **Status:** Aceito (implementado e validado em 2026-10-30: testes de integração, PoCs de confirmação e roteiro de aceitação com o Gemini real)
 - **Data da decisão:** 2026-10-30
 - **Decisores:** Lucas Rocha (responsável pela entrega)
 - **Relacionados:**

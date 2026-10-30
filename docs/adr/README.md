@@ -6,7 +6,7 @@
 
 Cada ADR trata de **uma única decisão**. As dependências entre decisões aparecem no campo **Relacionados** de cada documento, separadas em *Depende de*, *Influencia* e *Interage com*, e estão resumidas no grafo abaixo.
 
-Todos os ADRs estão como **Proposto**. Os marcados com 🧪 dependem da [prova de conceito](#provas-de-conceito-que-podem-reverter-decisões) para passar a **Aceito**.
+Todos os ADRs estão como **Aceito** (2026-10-30): as [provas de conceito](#provas-de-conceito-que-podem-reverter-decisões) foram executadas (testes de integração e roteiro de aceitação com o Gemini real) e nenhuma contingência foi acionada.
 
 ---
 
@@ -14,24 +14,24 @@ Todos os ADRs estão como **Proposto**. Os marcados com 🧪 dependem da [prova 
 
 | ADR | Decisão | Garantias | Status |
 | :--- | :--- | :--- | :--- |
-| [ADR-001](ADR-001-regras-em-camada-de-dominio.md) | Regras críticas numa camada de domínio determinística; tools como adaptadores finos | G1, G2, G5 | Proposto |
-| [ADR-002](ADR-002-versao-do-google-adk.md) | Fixar `google-adk[db]==2.13.0` (contingência: 2.9.1, depois 2.2.0) | Todas | Proposto 🧪 |
-| [ADR-003](ADR-003-topologia-de-agentes.md) | `concierge` + `reservas` e `visitantes` (`chat`, por transferência) + `regulamento` (`AgentTool`) | G1, G4 | Proposto 🧪 |
-| [ADR-004](ADR-004-controle-de-turno-e-transferencias.md) | Especialistas sem transferência para o pai nem para os pares: todo turno começa no `concierge` | G1 | Proposto 🧪 |
-| [ADR-005](ADR-005-mecanismo-de-confirmacao.md) | Confirmação nativa com `require_confirmation` declarativo (predicado de taxa *fail-closed*; visitante sempre) | G1 | Proposto 🧪 |
-| [ADR-006](ADR-006-retomada-sem-resumability.md) | `App` sem `ResumabilityConfig`; cada resposta de confirmação abre uma nova invocação | G1 | Proposto 🧪 |
-| [ADR-007](ADR-007-fonte-de-verdade-das-confirmacoes.md) | Pendências e `409` derivados dos eventos persistidos, sem tabela própria | G1, G3 | Proposto |
-| [ADR-008](ADR-008-mensagens-com-confirmacao-pendente.md) | Nova mensagem com pendência aberta é processada; a pendência continua válida | G1 | Proposto 🧪 |
-| [ADR-009](ADR-009-identidade-do-apartamento.md) | `user_id` do ADK = apartamento; tools leem `tool_context.user_id`; índice `session_id` → apartamento | G2 | Proposto |
-| [ADR-010](ADR-010-minimizacao-de-dados-nas-tools.md) | Saídas tipadas e mínimas; disponibilidade binária; erros indistinguíveis e sem dados de terceiros | G2 | Proposto |
-| [ADR-011](ADR-011-servico-de-sessao-persistente.md) | `DatabaseSessionService` sobre SQLite próprio, com WAL e `busy_timeout` | G3 | Proposto 🧪 |
-| [ADR-012](ADR-012-armazenamento-do-dominio.md) | Domínio em SQLite separado, via SQLAlchemy async | G3, G5 | Proposto |
-| [ADR-013](ADR-013-exclusividade-de-reserva.md) | Índice único parcial `(area_id, data) WHERE status='ativa'`; conflito vira resposta de negócio | G5 | Proposto |
-| [ADR-014](ADR-014-codigos-de-reserva.md) | Códigos `RSV-XXXXXX` aleatórios + registro permanente de códigos emitidos | RN-05 | Proposto |
-| [ADR-015](ADR-015-consulta-ao-regulamento.md) | Regulamento indexado por capítulo; tool com identificador fechado; execução isolada | G4 | Proposto |
-| [ADR-016](ADR-016-ciclo-de-vida-dos-dados.md) | Esquema idempotente na subida; seed por marcador; restauração limpa as sessões | G3 | Proposto |
-| [ADR-017](ADR-017-api-e-modelo-de-execucao.md) | FastAPI, processo único, `Runner` compartilhado, lock por sessão, mapeamento de erros | Contrato | Proposto |
-| [ADR-018](ADR-018-modelos-gemini.md) | Um modelo Flash estável para todos os agentes, via `AURORA_MODELO` | — | Proposto |
+| [ADR-001](ADR-001-regras-em-camada-de-dominio.md) | Regras críticas numa camada de domínio determinística; tools como adaptadores finos | G1, G2, G5 | Aceito |
+| [ADR-002](ADR-002-versao-do-google-adk.md) | Fixar `google-adk[db]==2.13.0` (contingência: 2.9.1, depois 2.2.0) | Todas | Aceito |
+| [ADR-003](ADR-003-topologia-de-agentes.md) | `concierge` + `reservas` e `visitantes` (`chat`, por transferência) + `regulamento` (`AgentTool`) | G1, G4 | Aceito |
+| [ADR-004](ADR-004-controle-de-turno-e-transferencias.md) | Especialistas sem transferência para o pai nem para os pares: todo turno começa no `concierge` | G1 | Aceito |
+| [ADR-005](ADR-005-mecanismo-de-confirmacao.md) | Confirmação nativa com `require_confirmation` declarativo (predicado de taxa *fail-closed*; visitante sempre) | G1 | Aceito |
+| [ADR-006](ADR-006-retomada-sem-resumability.md) | `App` sem `ResumabilityConfig`; cada resposta de confirmação abre uma nova invocação | G1 | Aceito |
+| [ADR-007](ADR-007-fonte-de-verdade-das-confirmacoes.md) | Pendências e `409` derivados dos eventos persistidos, sem tabela própria | G1, G3 | Aceito |
+| [ADR-008](ADR-008-mensagens-com-confirmacao-pendente.md) | Nova mensagem com pendência aberta é processada; a pendência continua válida | G1 | Aceito |
+| [ADR-009](ADR-009-identidade-do-apartamento.md) | `user_id` do ADK = apartamento; tools leem `tool_context.user_id`; índice `session_id` → apartamento | G2 | Aceito |
+| [ADR-010](ADR-010-minimizacao-de-dados-nas-tools.md) | Saídas tipadas e mínimas; disponibilidade binária; erros indistinguíveis e sem dados de terceiros | G2 | Aceito |
+| [ADR-011](ADR-011-servico-de-sessao-persistente.md) | `DatabaseSessionService` sobre SQLite próprio, com WAL e `busy_timeout` | G3 | Aceito |
+| [ADR-012](ADR-012-armazenamento-do-dominio.md) | Domínio em SQLite separado, via SQLAlchemy async | G3, G5 | Aceito |
+| [ADR-013](ADR-013-exclusividade-de-reserva.md) | Índice único parcial `(area_id, data) WHERE status='ativa'`; conflito vira resposta de negócio | G5 | Aceito |
+| [ADR-014](ADR-014-codigos-de-reserva.md) | Códigos `RSV-XXXXXX` aleatórios + registro permanente de códigos emitidos | RN-05 | Aceito |
+| [ADR-015](ADR-015-consulta-ao-regulamento.md) | Regulamento indexado por capítulo; tool com identificador fechado; execução isolada | G4 | Aceito |
+| [ADR-016](ADR-016-ciclo-de-vida-dos-dados.md) | Esquema idempotente na subida; seed por marcador; restauração limpa as sessões | G3 | Aceito |
+| [ADR-017](ADR-017-api-e-modelo-de-execucao.md) | FastAPI, processo único, `Runner` compartilhado, lock por sessão, mapeamento de erros | Contrato | Aceito |
+| [ADR-018](ADR-018-modelos-gemini.md) | Um modelo Flash estável para todos os agentes, via `AURORA_MODELO` | — | Aceito |
 
 ---
 

@@ -1,6 +1,6 @@
 # ADR-013 — Exclusividade de reserva garantida por índice único parcial, com o conflito traduzido em resposta de negócio
 
-- **Status:** Proposto
+- **Status:** Aceito (implementado e validado em 2026-10-30: testes de integração, PoCs de confirmação e roteiro de aceitação com o Gemini real)
 - **Data da decisão:** 2026-10-30
 - **Decisores:** Lucas Rocha (responsável pela entrega)
 - **Relacionados:**
