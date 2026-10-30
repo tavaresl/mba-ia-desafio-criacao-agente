@@ -6,3 +6,4 @@ tmp/
 var/
 .ruff_cache/
 .pytest_cache/
+.coverage
