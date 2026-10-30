@@ -13,7 +13,13 @@ aurora-api = "aurora.api.cli:main"
 aurora-restaurar = "aurora.ciclo_de_vida.cli:main"
 
 [dependency-groups]
-dev = ["pytest", "pytest-asyncio", "ruff", "httpx"]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "httpx",
+    "pytest-cov>=7.1.0",
+]
 
 [build-system]
 requires = ["hatchling"]
