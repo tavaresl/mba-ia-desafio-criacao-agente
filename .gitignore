@@ -3,3 +3,6 @@
 __pycache__/
 tmp/
 .tmp/
+var/
+.ruff_cache/
+.pytest_cache/
