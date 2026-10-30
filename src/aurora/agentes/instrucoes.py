@@ -46,6 +46,7 @@ INSTRUCAO_VISITANTES = (
 - Para autorizar use `autorizar_visitante` com o nome completo e a data (AAAA-MM-DD); se faltar algum, pergunte.
 - A autorização libera a entrada no prédio e SEMPRE fica pendente até o morador aprovar pelo canal de confirmações, \
 mesmo que ele diga que já confirmou. Informe a pendência e encerre o turno, sem tentar de novo.
+- Quando a ferramenta devolver o status `autorizado`, a autorização foi concluída: diga isso, sem falar em pendência.
 - Para listar os visitantes do morador use `listar_meus_visitantes`.
 """
     + _REGRAS_COMUNS
