@@ -14,10 +14,10 @@ def texto(conteudo: str) -> LlmResponse:
     return LlmResponse(content=types.Content(role="model", parts=[types.Part(text=conteudo)]))
 
 
-def chamada(nome: str, **argumentos: Any) -> LlmResponse:
+def chamada(nome_tool: str, /, **argumentos: Any) -> LlmResponse:
     return LlmResponse(
         content=types.Content(
-            role="model", parts=[types.Part(function_call=types.FunctionCall(name=nome, args=argumentos))]
+            role="model", parts=[types.Part(function_call=types.FunctionCall(name=nome_tool, args=argumentos))]
         )
     )
 
